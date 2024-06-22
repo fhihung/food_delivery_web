@@ -16,16 +16,14 @@ class CartController extends Controller
     public function save_cart(Request $request){
         $productId = $request->productid_hidden;
         $quantity = $request->qty;
-    
-        // Lấy thông tin sản phẩm từ bảng tbl_products
+   
         $product_info = DB::table('tbl_products')->where('product_id', $productId)->first();
     
-        // Kiểm tra xem sản phẩm có tồn tại không
         if (!$product_info) {
             return Redirect::to('/')->withErrors('Sản phẩm không tồn tại.');
         }
     
-        // Tạo mảng dữ liệu để thêm vào giỏ hàng
+     
         $data = array();
         $data['id'] = $product_info->product_id;
         $data['qty'] = $quantity;

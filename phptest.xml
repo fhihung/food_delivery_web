@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php" colors="true">
+    <listeners>
+        <listener class="Yandex\Allure\Adapter\AllurePhpUnit">
+            <arguments>
+                <array>
+                    <element key="outputDirectory" value="build/allure-results"/>
+                </array>
+            </arguments>
+        </listener>
+    </listeners>
+</phpunit>

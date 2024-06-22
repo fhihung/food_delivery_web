@@ -51,6 +51,7 @@ class BrandProduct extends Controller
        return Redirect::to('all-brand-product');
     }
 
+    //het admin
     public function show_brand_home($brand_id){
         $cate_product = DB::table('tbl_category_products')->where('cate_status','1')->orderby('cate_id','desc')->get();
         $brand_product = DB::table('tbl_brands')->where('brand_status','1')->orderby('brand_id','desc')->get();

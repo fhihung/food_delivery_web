@@ -52,6 +52,7 @@ class CategoryProduct extends Controller
        return Redirect::to('all-category-product');
     }
 
+    //het admin
     public function show_category_home($category_id){
         $cate_product = DB::table('tbl_category_products')
         ->where('cate_status','1')
